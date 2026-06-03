@@ -1,0 +1,47 @@
+{
+  "id": "introduction",
+  "title": "Introduction Quiz",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "In one sentence, what does a contract describe?",
+      "options": [
+        "Who should do the work and when",
+        "What must become true, without assuming who makes it true",
+        "Which tool or model is required to do the work",
+        "How long the work should take"
+      ],
+      "answer": 1,
+      "explanation": "A contract describes what must become true; it never assumes who executes it. That is what makes it executor-agnostic."
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "This repository is a framework you install and run.",
+      "answer": false,
+      "explanation": "It is documentation, not a framework. There is nothing to install — you read it, fork it, and drop its templates next to your own project."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Why does writing work as an executor-agnostic contract help it survive changes in tooling?",
+      "options": [
+        "Because contracts are written in a universal programming language",
+        "Because there is always someone doing the work, even as tools and models come and go",
+        "Because contracts are automatically translated between tools",
+        "Because the orchestrator rewrites contracts for each new tool"
+      ],
+      "answer": 1,
+      "explanation": "Software outlives its tools. A contract independent of its executor survives every change of tooling, because there is always someone — or something — to execute it."
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "prompt": "Fork/join means the orchestrator splits work into parallel units that each commit or roll back, then recombines the committed results.",
+      "answer": true,
+      "explanation": "Correct. The orchestrator forks work into parallel units of work; each commits or rolls back; the orchestrator joins the committed results."
+    }
+  ]
+}

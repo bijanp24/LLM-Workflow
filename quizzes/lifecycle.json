@@ -1,0 +1,60 @@
+{
+  "id": "lifecycle",
+  "title": "Contract Lifecycle Quiz",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "How many terminal states does the contract lifecycle have, and what are they?",
+      "options": [
+        "One: DONE",
+        "Two: ACCEPTED and ABORTED",
+        "Three: PASS, FAIL, and RETRY",
+        "Four, one per role"
+      ],
+      "answer": 1,
+      "explanation": "Exactly two terminal states: ACCEPTED (committed) and ABORTED (rolled back). So at join time every contract is either fully in or fully out."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "At which transition is an executor injected (the DI moment)?",
+      "options": [
+        "DRAFTED → READY",
+        "READY → CLAIMED",
+        "IN_PROGRESS → VERIFYING",
+        "VERIFYING → ACCEPTED"
+      ],
+      "answer": 1,
+      "explanation": "READY → CLAIMED is the one moment 'who does it' is decided. It touches nothing in the contract itself."
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "When an executor needs to touch something outside its scope, the correct move is to go to BLOCKED and notify the orchestrator.",
+      "answer": true,
+      "explanation": "Correct — and it is the single most important rule. The executor moves to BLOCKED rather than quietly expanding scope."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "What must happen before a contract can move VERIFYING → ACCEPTED?",
+      "options": [
+        "The executor states it believes the work is done",
+        "The orchestrator approves the plan",
+        "The contract's own verification steps pass",
+        "A new branch is created"
+      ],
+      "answer": 2,
+      "explanation": "ACCEPTED requires the contract's verification to pass. 'I think it's done' is not enough — the contract names how done is proven."
+    },
+    {
+      "id": "q5",
+      "type": "true-false",
+      "prompt": "A contract may legitimately end as 'mostly done' if most success criteria are met.",
+      "answer": false,
+      "explanation": "No. 'Mostly done' is exactly the broken-state outcome the machine prevents. The only exits are fully in (ACCEPTED) or fully out (ABORTED)."
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "id": "concepts",
+  "title": "Core Concepts Quiz",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Under Inversion of Control, who owns the definition of correctness?",
+      "options": [
+        "The executor doing the work",
+        "The contract",
+        "The tool or model vendor",
+        "Whoever reviews the result"
+      ],
+      "answer": 1,
+      "explanation": "IoC inverts the usual arrangement: the contract owns the definition of correctness, not the doer. The executor aims at a target the contract already defined."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Dependency Injection in this workflow refers to:",
+      "options": [
+        "Injecting code libraries into the build",
+        "The executor being supplied to the contract from outside, rather than chosen by it",
+        "The orchestrator writing the contract automatically",
+        "Adding dependencies between contracts"
+      ],
+      "answer": 1,
+      "explanation": "DI is the mechanism behind IoC: the executor is a slot that is injected from outside, so the same contract can be run by a human, today's model, or a future one."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "A Unit of Work has exactly two exits. What are they?",
+      "options": [
+        "Start and finish",
+        "Pass and fail",
+        "Commit and rollback",
+        "Accept and retry"
+      ],
+      "answer": 2,
+      "explanation": "Each contract runs inside a unit of work with two exits: commit (success criteria verified) or rollback (an abort condition fired). Never a half-state."
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "prompt": "Abort criteria are optional and only success criteria really matter.",
+      "answer": false,
+      "explanation": "Abort criteria are first-class. They are the ROLLBACK triggers; without them, a stuck executor improvises, and improvisation is how shared state gets corrupted."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": "What is the orchestrator best described as?",
+      "options": [
+        "A faster executor",
+        "The composition root that wires contracts to executors and integrates results",
+        "A code linter",
+        "A backup of the repository"
+      ],
+      "answer": 1,
+      "explanation": "The orchestrator is the composition root: the one place that knows about both contracts and available executors, wires them together, and integrates the results."
+    }
+  ]
+}

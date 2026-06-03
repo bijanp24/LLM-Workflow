@@ -1,0 +1,60 @@
+{
+  "id": "orchestration",
+  "title": "Orchestration & Parallelism Quiz",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Who is allowed to edit shared or central files (routing, config, shared models)?",
+      "options": [
+        "Any executor that needs to",
+        "Only the orchestrator",
+        "The first executor to claim them",
+        "No one, ever"
+      ],
+      "answer": 1,
+      "explanation": "Shared/central files are orchestrator-owned. No executor may edit them; contracts depend on the orchestrator's result instead."
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Two contracts that must change the same file can still safely run in parallel.",
+      "answer": false,
+      "explanation": "If two contracts must touch the same file they are not parallelizable — combine them into one contract or serialize them. Parallel safety requires disjoint scopes."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "The entire safety model reduces to which single idea?",
+      "options": [
+        "More executors finish work faster",
+        "Disjoint scopes plus isolated units of work merge cleanly and never leave the project broken",
+        "Always verify after merging",
+        "The orchestrator reviews every line of code"
+      ],
+      "answer": 1,
+      "explanation": "Disjoint scopes + isolated units of work = parallel work that always merges cleanly and never leaves the project broken."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "During the JOIN step, what happens to an ABORTED contract?",
+      "options": [
+        "Its partial work is merged anyway",
+        "It is retried automatically by the orchestrator",
+        "Its isolated workspace is confirmed discarded; the project is untouched",
+        "It blocks all other contracts from integrating"
+      ],
+      "answer": 2,
+      "explanation": "On join, ABORTED means the workspace is discarded and the project is left exactly as it was. Only ACCEPTED contracts are integrated, in dependency order."
+    },
+    {
+      "id": "q5",
+      "type": "true-false",
+      "prompt": "Done is asserted by the executor, not proven.",
+      "answer": false,
+      "explanation": "Done is proven, not asserted. The contract names the verification, and it must pass before the work is accepted."
+    }
+  ]
+}

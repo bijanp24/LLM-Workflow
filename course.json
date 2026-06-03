@@ -1,0 +1,50 @@
+{
+  "id": "foundations",
+  "title": "Foundations of Executor-Agnostic Workflows",
+  "description": "Learn to break work into contracts that any human or model can execute in parallel, safely, using Inversion of Control, Dependency Injection, and the Unit of Work pattern.",
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "id": "introduction",
+      "title": "Introduction",
+      "doc": "README.md",
+      "quiz": "quizzes/introduction.json"
+    },
+    {
+      "id": "concepts",
+      "title": "Core Concepts: IoC, DI & Unit of Work",
+      "doc": "docs/concepts.md",
+      "quiz": "quizzes/concepts.json"
+    },
+    {
+      "id": "lifecycle",
+      "title": "The Contract Lifecycle",
+      "doc": "docs/lifecycle.md",
+      "quiz": "quizzes/lifecycle.json"
+    },
+    {
+      "id": "orchestration",
+      "title": "Orchestration & Parallelism",
+      "doc": "docs/orchestration.md",
+      "quiz": "quizzes/orchestration.json"
+    },
+    {
+      "id": "adapters-human",
+      "title": "Adapter: The Human Executor",
+      "doc": "adapters/human-executor.md",
+      "quiz": null
+    },
+    {
+      "id": "adapters-llm",
+      "title": "Adapter: The Generic LLM Executor",
+      "doc": "adapters/llm-executor.md",
+      "quiz": null
+    },
+    {
+      "id": "glossary",
+      "title": "Glossary",
+      "doc": "docs/glossary.md",
+      "quiz": null
+    }
+  ]
+}
