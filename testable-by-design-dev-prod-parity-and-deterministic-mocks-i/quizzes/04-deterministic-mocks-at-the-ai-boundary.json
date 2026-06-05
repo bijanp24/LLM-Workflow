@@ -1,0 +1,40 @@
+{
+  "id": "deterministic-mocks-at-the-ai-boundary",
+  "title": "Deterministic Mocks at the AI Boundary — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Why is the AI search implemented as a deterministic mock rather than a live LLM call in the core path?",
+      "explanation": "A deterministic stub yields the same output for the same input, so tests are repeatable, fast, network-free, and can assert exact results.",
+      "options": [
+        "LLMs cannot be called from TypeScript",
+        "Determinism makes tests repeatable, offline, and exactly assertable",
+        "It is cheaper to write fewer tests",
+        "The frontend cannot parse LLM output"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Placing a non-deterministic LLM call inside the core compute path tends to make a test suite flaky and force loose assertions.",
+      "explanation": "Non-deterministic outputs vary run to run, so tests can only assert loosely and may fail intermittently regardless of code correctness.",
+      "answer": true
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "What design move keeps the rest of the system deterministic even if a real model is used later?",
+      "explanation": "An explicit seam lets the mock answer in tests/dev while a real model could sit behind the same boundary later, leaving the deterministic core untouched.",
+      "options": [
+        "Removing all tests for search",
+        "Hiding the AI behind an explicit, swappable seam at the boundary",
+        "Calling the model from every domain module",
+        "Caching every possible LLM response"
+      ],
+      "answer": 1
+    }
+  ]
+}

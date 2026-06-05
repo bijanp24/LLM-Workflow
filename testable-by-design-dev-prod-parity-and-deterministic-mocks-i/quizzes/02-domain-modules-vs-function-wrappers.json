@@ -1,0 +1,40 @@
+{
+  "id": "domain-modules-vs-function-wrappers",
+  "title": "Domain Modules vs. Function Wrappers — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What is the primary job of a function in `netlify/functions/*`?",
+      "explanation": "The function files are thin wrappers handling HTTP plumbing; the decision logic lives in `netlify/lib/*`.",
+      "options": [
+        "To implement the domain decision logic",
+        "To adapt an HTTP request to a `lib` call and serialize the result back",
+        "To mock the AI search",
+        "To define the Netlify redirect rules"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Keeping domain logic in pure modules lets most tests run without constructing HTTP requests or responses.",
+      "explanation": "Pure functions are tested by passing input and asserting output, avoiding the overhead and brittleness of request/response mocking.",
+      "answer": true
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Which dependency direction reflects the inversion of control in this design?",
+      "explanation": "The wrapper depends on the module while the logic stays ignorant of the transport, so the host can change without touching domain code.",
+      "options": [
+        "The domain module imports the HTTP wrapper",
+        "The wrapper imports the domain module, never the reverse",
+        "Both import each other equally",
+        "Neither imports the other; they communicate over HTTP"
+      ],
+      "answer": 1
+    }
+  ]
+}
