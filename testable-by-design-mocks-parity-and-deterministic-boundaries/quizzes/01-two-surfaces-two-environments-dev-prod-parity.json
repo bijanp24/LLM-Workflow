@@ -1,0 +1,40 @@
+{
+  "id": "two-surfaces-two-environments-dev-prod-parity",
+  "title": "Two Surfaces, Two Environments: Dev/Prod Parity — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Why does the Agronomy Studio frontend talk to only two surfaces (the gateway and the mock AI search)?",
+      "explanation": "A minimal surface (two URLs with fixed shapes) can be reproduced by a local mock, enabling offline development and a fast inner loop.",
+      "options": [
+        "To reduce the number of HTTP libraries the frontend must bundle",
+        "Because a small, stable surface is easy to reproduce locally for development",
+        "Because Netlify only allows two redirect rules",
+        "To make the UI render faster in the browser"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "For dev/prod parity to be useful, the local mock and the production function must return identical values, not just identical response shapes.",
+      "explanation": "Parity is about matching the response *shape*/schema so bugs reproduce. The actual values will differ (real weather vs. fixture data); that is expected.",
+      "answer": false
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "What does the URL path `/agronomy-api/soil` represent in this architecture?",
+      "explanation": "The path is the shared contract. Whatever answers it — local mock or Netlify function — must honor the same request/response shape, making the implementation swappable.",
+      "options": [
+        "A hard-coded link to the CIMIS upstream service",
+        "The contract that both the local mock and the production function must satisfy",
+        "A redirect that only exists in production",
+        "A frontend-only route with no backend behind it"
+      ],
+      "answer": 1
+    }
+  ]
+}

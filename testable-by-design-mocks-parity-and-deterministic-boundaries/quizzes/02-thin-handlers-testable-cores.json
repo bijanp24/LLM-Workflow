@@ -1,0 +1,40 @@
+{
+  "id": "thin-handlers-testable-cores",
+  "title": "Thin Handlers, Testable Cores — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What is the primary responsibility of a function wrapper in `netlify/functions/*`?",
+      "explanation": "Wrappers are thin: they unpack the HTTP request, call into a lib module, and pack the result back. The logic lives in the lib module.",
+      "options": [
+        "To hold the domain logic and parse upstream responses",
+        "To translate between the platform's HTTP request/response and a plain function call in `netlify/lib/*`",
+        "To run the unit tests for the domain module",
+        "To configure the Netlify redirects"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Why does `getSoil` accept `fetchImpl = fetch` as a parameter?",
+      "explanation": "Injecting the dependency (inversion of control) lets a test supply a fake fetch, so the core's mapping logic can be verified in isolation, in milliseconds.",
+      "options": [
+        "To make the function slower but more readable",
+        "So tests can inject a fake fetch and verify behavior without any network or platform",
+        "Because Netlify requires every function to take a fetch argument",
+        "To cache responses between calls"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "Keeping logic in `netlify/lib/*` lets the gateway module call `getSoil` directly instead of making an internal HTTP request to the soil function.",
+      "explanation": "True. Because the logic is a reusable function, the gateway can compose results by calling it directly, avoiding an unnecessary internal HTTP round trip.",
+      "answer": false
+    }
+  ]
+}

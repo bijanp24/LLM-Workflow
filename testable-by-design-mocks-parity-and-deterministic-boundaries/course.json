@@ -1,0 +1,32 @@
+{
+  "id": "testable-by-design-mocks-parity-and-deterministic-boundaries",
+  "title": "Testable by Design: Mocks, Parity, and Deterministic Boundaries",
+  "description": "Using Agronomy Studio's Blazor + TypeScript Netlify backend, learn how to keep a gateway-fronted microservice system fast to develop and trustworthy to test: local mocks, dev/prod parity, thin handlers over testable cores, and deterministic boundaries.",
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "id": "two-surfaces-two-environments-dev-prod-parity",
+      "title": "Two Surfaces, Two Environments: Dev/Prod Parity",
+      "doc": "testable-by-design-mocks-parity-and-deterministic-boundaries/docs/01-two-surfaces-two-environments-dev-prod-parity.md",
+      "quiz": "testable-by-design-mocks-parity-and-deterministic-boundaries/quizzes/01-two-surfaces-two-environments-dev-prod-parity.json"
+    },
+    {
+      "id": "thin-handlers-testable-cores",
+      "title": "Thin Handlers, Testable Cores",
+      "doc": "testable-by-design-mocks-parity-and-deterministic-boundaries/docs/02-thin-handlers-testable-cores.md",
+      "quiz": "testable-by-design-mocks-parity-and-deterministic-boundaries/quizzes/02-thin-handlers-testable-cores.json"
+    },
+    {
+      "id": "deterministic-boundaries-why-the-ai-mock-is-predictable-on-p",
+      "title": "Deterministic Boundaries: Why the AI Mock Is Predictable on Purpose",
+      "doc": "testable-by-design-mocks-parity-and-deterministic-boundaries/docs/03-deterministic-boundaries-why-the-ai-mock-is-predictable-on-p.md",
+      "quiz": "testable-by-design-mocks-parity-and-deterministic-boundaries/quizzes/03-deterministic-boundaries-why-the-ai-mock-is-predictable-on-p.json"
+    },
+    {
+      "id": "the-test-loop-typecheck-unit-tests-and-contract-checks",
+      "title": "The Test Loop: Typecheck, Unit Tests, and Contract Checks",
+      "doc": "testable-by-design-mocks-parity-and-deterministic-boundaries/docs/04-the-test-loop-typecheck-unit-tests-and-contract-checks.md",
+      "quiz": "testable-by-design-mocks-parity-and-deterministic-boundaries/quizzes/04-the-test-loop-typecheck-unit-tests-and-contract-checks.json"
+    }
+  ]
+}

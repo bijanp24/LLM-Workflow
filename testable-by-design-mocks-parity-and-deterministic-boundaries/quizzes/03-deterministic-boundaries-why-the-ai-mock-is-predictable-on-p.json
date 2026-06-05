@@ -1,0 +1,40 @@
+{
+  "id": "deterministic-boundaries-why-the-ai-mock-is-predictable-on-p",
+  "title": "Deterministic Boundaries: Why the AI Mock Is Predictable on Purpose — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Why is a deterministic mock essential for writing meaningful tests around the AI search?",
+      "explanation": "A test is only an assertion if its expected value is stable. A non-deterministic LLM gives no fixed value to assert against; a deterministic mock does.",
+      "options": [
+        "Because mocks are always faster than real services",
+        "Because a stable, fixed output lets you write exact assertions that only change when you change the code",
+        "Because Netlify cannot call real LLMs",
+        "Because deterministic mocks improve the model's accuracy"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Keeping the AI search as a separate, stubbed surface prevents the LLM's non-determinism from leaking into the gateway's core compute path.",
+      "explanation": "True. Isolating AI as an edge feature keeps the deterministic core verifiable and trustworthy, independent of model uncertainty.",
+      "answer": false
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "What does a deterministic AI mock NOT verify?",
+      "explanation": "The mock tests your system's handling of the model's contract. Judging the real model's output quality is a separate, probabilistic evaluation that belongs in its own suite.",
+      "options": [
+        "That your code shapes the request correctly",
+        "That your code parses the response shape correctly",
+        "The real model's answer quality",
+        "That the UI renders the results"
+      ],
+      "answer": 2
+    }
+  ]
+}
