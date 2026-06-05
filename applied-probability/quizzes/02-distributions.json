@@ -1,0 +1,60 @@
+{
+  "id": "ap-distributions",
+  "title": "Distributions, Thresholds, and Base Rates",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "You ask an LLM 10 factual questions. Each answer has an 80% chance of being correct. How many correct answers should you expect on average?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "10"
+      ],
+      "answer": 2,
+      "explanation": "Expected value for a binomial distribution is n × p = 10 × 0.8 = 8. This is the average over many trials; any individual run may vary."
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "If an LLM is right 80% of the time, it is wrong 20% of the time. For high-stakes tasks like medication or legal filings, this error rate is acceptable without additional verification.",
+      "answer": false,
+      "explanation": "An 80% accuracy rate means 1 in 5 responses contains an error. For high-stakes tasks, this level of error is not acceptable without verification — the consequence of that 20% outweighs the convenience."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Each claim in a long AI answer has a 5% chance of being wrong. What is the approximate probability that at least one of 20 claims is wrong?",
+      "options": [
+        "About 5%",
+        "About 36%",
+        "About 64%",
+        "About 100%"
+      ],
+      "answer": 2,
+      "explanation": "Chance all 20 are correct: 0.95 ^ 20 ≈ 0.358. So the chance at least one is wrong = 1 - 0.358 ≈ 0.642, or about 64%. Even a low per-claim error rate becomes dangerous over long outputs."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "Which of the following questions carries the LOWEST base-rate hallucination risk for an LLM?",
+      "options": [
+        "What did this company announce yesterday?",
+        "What is the current API syntax for this library?",
+        "Explain what the Pythagorean theorem is.",
+        "What dose of this medication should I take?"
+      ],
+      "answer": 2,
+      "explanation": "Stable, widely-documented, timeless facts (like the Pythagorean theorem) have the lowest hallucination risk. Recent news, rapidly-changing APIs, and medical specifics all have much higher base rates of error."
+    },
+    {
+      "id": "q5",
+      "type": "true-false",
+      "prompt": "The CDF threshold mindset means that brainstorming and irreversible medical decisions require the same confidence level before acting on AI output.",
+      "answer": false,
+      "explanation": "The CDF mindset says the more severe the consequence, the farther into the confidence curve you need to go. Brainstorming requires low confidence; irreversible decisions require extremely high confidence."
+    }
+  ]
+}
