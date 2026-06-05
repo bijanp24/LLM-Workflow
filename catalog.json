@@ -1,0 +1,18 @@
+{
+  "title": "LLM Academy",
+  "description": "Free, self-paced continuing education on working effectively and safely with large language models.",
+  "courses": [
+    {
+      "id": "foundations",
+      "title": "Foundations of Executor-Agnostic Workflows",
+      "description": "Learn to break work into contracts that any human or model can execute in parallel, safely, using Inversion of Control, Dependency Injection, and the Unit of Work pattern.",
+      "manifest": "course.json"
+    },
+    {
+      "id": "applied-probability",
+      "title": "Applied Probability for LLM Verification",
+      "description": "Statistics for not getting bamboozled by the robot. Build the probabilistic intuition you need to know when to trust an LLM, when to verify, and how hard.",
+      "manifest": "applied-probability/course.json"
+    }
+  ]
+}

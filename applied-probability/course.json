@@ -1,0 +1,26 @@
+{
+  "id": "applied-probability",
+  "title": "Applied Probability for LLM Verification",
+  "description": "Statistics for not getting bamboozled by the robot. Build the probabilistic intuition you need to know when to trust an LLM, when to verify, and how hard.",
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "id": "basics",
+      "title": "Probability, Fluency, and the Hallucination Trap",
+      "doc": "applied-probability/docs/01-basics.md",
+      "quiz": "applied-probability/quizzes/01-basics.json"
+    },
+    {
+      "id": "distributions",
+      "title": "Distributions, Thresholds, and Base Rates",
+      "doc": "applied-probability/docs/02-distributions.md",
+      "quiz": "applied-probability/quizzes/02-distributions.json"
+    },
+    {
+      "id": "verification",
+      "title": "Verification in Practice",
+      "doc": "applied-probability/docs/03-verification.md",
+      "quiz": "applied-probability/quizzes/03-verification.json"
+    }
+  ]
+}

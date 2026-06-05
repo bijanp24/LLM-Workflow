@@ -1,0 +1,66 @@
+{
+  "id": "ap-verification",
+  "title": "Verification in Practice",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "An LLM cites a real academic paper. What must still be verified before treating that citation as proof?",
+      "options": [
+        "Nothing — if the paper exists, the citation is valid",
+        "Whether the paper was written recently",
+        "Whether the paper actually supports the specific claim being made",
+        "Whether the paper was cited by other sources"
+      ],
+      "answer": 2,
+      "explanation": "A citation is not automatically proof. False citations occur when a real source exists but does not actually support the claim. The citation must be checked against the source text."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which of the following is the WEAKEST form of independent verification for an AI claim?",
+      "options": [
+        "Checking the official documentation",
+        "Running a local reproducible test",
+        "Asking two more AI models the same question",
+        "Consulting a primary source"
+      ],
+      "answer": 2,
+      "explanation": "Asking multiple AI models is weak verification because they may all share the same training data or repeat the same internet myth. True independence requires different kinds of evidence."
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "According to the verification ladder, a Level 4 reproducible test (running code, checking calculations) is sufficient for high-stakes medical or legal decisions.",
+      "answer": false,
+      "explanation": "Level 4 (reproducible test) is appropriate for code, math, and APIs. High-stakes medical or legal decisions require Level 5 — expert review by a licensed professional."
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "A prompt asking an LLM to 'state the claim, state the assumptions, give the test, give the expected result, and list failure cases' is most useful for:",
+      "options": [
+        "Brainstorming and ideation",
+        "Technical work like code and APIs where each step is testable",
+        "Getting a longer, more detailed answer",
+        "Reducing the model's confidence so it hedges more"
+      ],
+      "answer": 1,
+      "explanation": "This structured prompt pattern forces the model to decompose its output into verifiable, testable pieces — ideal for technical work where each component can be run or checked independently."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": "Expected value in the context of AI verification is best described as:",
+      "options": [
+        "The average accuracy of the model across all queries",
+        "The probability of error multiplied by the severity of consequence",
+        "The number of verifications needed to reach 100% confidence",
+        "The expected number of correct answers in a set of questions"
+      ],
+      "answer": 1,
+      "explanation": "Expected value = probability × consequence. A low-probability mistake can still matter enormously if the consequence is severe (e.g. medication dosing), which is why verification effort should scale with consequence."
+    }
+  ]
+}

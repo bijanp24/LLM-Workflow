@@ -1,0 +1,60 @@
+{
+  "id": "ap-basics",
+  "title": "Probability, Fluency, and the Hallucination Trap",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "true-false",
+      "prompt": "A fluent, confident-sounding answer from an LLM is itself evidence that the answer is correct.",
+      "answer": false,
+      "explanation": "Fluency is not evidence. LLMs generate likely continuations of text, so tone and confidence do not indicate truth. Verification is evidence."
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "An LLM gives a 5-step answer where each step is 90% likely to be correct. What is the approximate probability that the entire answer is completely correct?",
+      "options": [
+        "About 90%",
+        "About 80%",
+        "About 59%",
+        "About 45%"
+      ],
+      "answer": 2,
+      "explanation": "Probabilities multiply when all parts must be correct: 0.9 × 0.9 × 0.9 × 0.9 × 0.9 = 0.59049. Even though each step looks reliable, the full chain is only about 59% likely to be completely correct."
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "What is the best way to reduce the hallucination risk in a long AI answer?",
+      "options": [
+        "Ask the same model again for confirmation",
+        "Ask the model to be more confident",
+        "Break the answer into smaller, individually testable claims",
+        "Request a longer, more detailed response"
+      ],
+      "answer": 2,
+      "explanation": "The anti-hallucination move is decomposition. Breaking a big claim into smaller, testable claims converts vague confidence into verifiable evidence."
+    },
+    {
+      "id": "q4",
+      "type": "true-false",
+      "prompt": "If each individual claim in a long answer has a 95% chance of being correct, then a 6-claim answer also has about a 95% chance of being fully correct.",
+      "answer": false,
+      "explanation": "Probabilities multiply: 0.95 ^ 6 ≈ 0.735. The 6-claim answer is only about 73.5% likely to be fully correct, even though each individual claim looks highly reliable."
+    },
+    {
+      "id": "q5",
+      "type": "multiple-choice",
+      "prompt": "When checking AI-generated code for correctness, which approach converts vague confidence into testable evidence?",
+      "options": [
+        "Asking the model whether the code is correct",
+        "Checking each specific case: does it compile, pass tests, handle null, handle empty input, match the API contract",
+        "Running the code once and seeing if it produces any output",
+        "Asking a different AI to review the code"
+      ],
+      "answer": 1,
+      "explanation": "Specific, targeted checks (compile, tests, edge cases, API contract) are individually falsifiable. Each converts the vague claim 'this works' into a concrete pass/fail question."
+    }
+  ]
+}
