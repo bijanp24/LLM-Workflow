@@ -1,0 +1,53 @@
+{
+  "id": "the-test-loop-typecheck-unit-tests-and-contract-checks",
+  "title": "The Test Loop: Typecheck, Unit Tests, and Contract Checks — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What class of bug does `npm run typecheck` catch that unit tests might miss?",
+      "explanation": "Static typing flags structural mismatches (e.g., reading `result.moisture` when the field is `soilMoisture`) at compile time, across the whole codebase, without executing anything.",
+      "options": [
+        "A model returning low-quality answers",
+        "A renamed or mistyped field used across modules, caught statically before any code runs",
+        "A slow upstream API timing out",
+        "A redirect rule pointing to the wrong function"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "What is the purpose of a contract test in this system?",
+      "explanation": "Contract tests guard dev/prod parity by validating both producers against one shared schema, catching drift in CI rather than in the live UI.",
+      "options": [
+        "To measure how fast the gateway responds",
+        "To assert that both the local mock and the production function honor the same response schema",
+        "To verify the LLM's answer quality",
+        "To replace unit tests entirely"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "Because the AI boundary is a deterministic mock, even end-to-end tests of the full path can run offline with stable expected results.",
+      "explanation": "True. Stubbing the only non-deterministic boundary keeps the entire compute path reproducible, so higher-level tests remain stable and require no network.",
+      "answer": false
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "Why run typecheck and unit tests on every save but heavier layers only before merge?",
+      "explanation": "A layered strategy puts the fastest, highest-yield checks in the inner loop and reserves slower, broader checks for the merge gate, keeping the dev loop fast without sacrificing coverage.",
+      "options": [
+        "Because heavier layers are unreliable",
+        "Because cheaper, faster layers catch the most bugs per second of runtime and fit a tight inner loop",
+        "Because Netlify limits how often you can run tests",
+        "Because contract tests don't matter in development"
+      ],
+      "answer": 1
+    }
+  ]
+}
