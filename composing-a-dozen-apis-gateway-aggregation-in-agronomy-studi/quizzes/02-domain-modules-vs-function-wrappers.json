@@ -1,0 +1,40 @@
+{
+  "id": "domain-modules-vs-function-wrappers",
+  "title": "Domain Modules vs. Function Wrappers — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What belongs in `netlify/functions/*` rather than `netlify/lib/*`?",
+      "explanation": "Functions are thin HTTP wrappers; domain logic and policies live in lib so they can be tested and reused independent of the deployment host.",
+      "options": [
+        "The algorithm that computes evapotranspiration",
+        "Parsing the HTTP request and formatting the HTTP response",
+        "The mapping of soil types to crop coefficients",
+        "The retry policy for the CIMIS upstream"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Keeping logic in `lib/` lets the same gateway module be driven by both the local mock server and the production Netlify function.",
+      "explanation": "Because the logic does not depend on the HTTP host, multiple wrappers (mock server, Netlify function) can drive the same module.",
+      "answer": true
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "How does this layering relate to inversion of control?",
+      "explanation": "The logic is independent and the wrapper depends on it — control of the dependency direction is inverted toward the stable core.",
+      "options": [
+        "The deployment host controls the domain logic's internals",
+        "The domain logic depends on Netlify-specific APIs",
+        "The deployment wrapper depends on the logic, not the reverse",
+        "Tests must run inside the Netlify runtime"
+      ],
+      "answer": 2
+    }
+  ]
+}

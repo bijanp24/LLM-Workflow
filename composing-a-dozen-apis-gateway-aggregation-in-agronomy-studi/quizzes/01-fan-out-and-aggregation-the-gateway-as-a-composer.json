@@ -1,0 +1,40 @@
+{
+  "id": "fan-out-and-aggregation-the-gateway-as-a-composer",
+  "title": "Fan-out and Aggregation: The Gateway as a Composer — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What is the primary job of the Agronomy Studio gateway?",
+      "explanation": "The gateway composes: it calls several domain services concurrently and assembles their results into one coherent response for the client.",
+      "options": [
+        "To store all agronomy data in a single database",
+        "To fan out to multiple domain services and compose one response",
+        "To render the Blazor UI on the server",
+        "To replace the domain microservices entirely"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Using `Promise.all` to fan out to three services makes the client wait roughly for the slowest service rather than the sum of all three.",
+      "explanation": "`Promise.all` runs the calls concurrently, so total time is bounded by the slowest call, not the sum.",
+      "answer": true
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Why is server-side composition usually faster than letting the browser call every service directly?",
+      "explanation": "A single client round trip plus fast intra-region fan-out beats many slow client-to-third-party round trips.",
+      "options": [
+        "Servers ignore network latency entirely",
+        "Server-to-server calls within a region avoid many high-latency client round trips",
+        "Browsers cannot make concurrent requests",
+        "The gateway caches every possible response forever"
+      ],
+      "answer": 1
+    }
+  ]
+}
