@@ -1,0 +1,40 @@
+{
+  "id": "dev-prod-parity-mocks-locally-redirects-in-production",
+  "title": "Dev/Prod Parity: Mocks Locally, Redirects in Production — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What serves the `/agronomy-api/*` surface during local development?",
+      "explanation": "Locally, `tools/mock-apis.mjs` serves the gateway and AI surfaces; production uses Netlify redirects to the deployed functions.",
+      "options": [
+        "The deployed Netlify functions",
+        "`tools/mock-apis.mjs`",
+        "The Blazor app itself",
+        "A live connection to CIMIS and the other real APIs"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "A Netlify redirect with `status = 200` rewrites the request so the browser's visible URL still reads `/agronomy-api/...`.",
+      "explanation": "A 200 rewrite serves the function transparently; the client URL is unchanged, hiding the real function path.",
+      "answer": true
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "What most directly preserves dev/prod parity in this setup?",
+      "explanation": "Parity comes from holding the client-facing contract constant and validating both backends against it, even though the machinery differs.",
+      "options": [
+        "Using the exact same code for the mock and the functions",
+        "Keeping the client-visible contract (`/agronomy-api/*` shapes and schemas) identical across environments",
+        "Running production tests only",
+        "Disabling the mock in CI"
+      ],
+      "answer": 1
+    }
+  ]
+}

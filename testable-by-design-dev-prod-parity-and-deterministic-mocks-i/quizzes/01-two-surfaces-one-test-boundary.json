@@ -1,0 +1,40 @@
+{
+  "id": "two-surfaces-one-test-boundary",
+  "title": "Two Surfaces, One Test Boundary — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "From the browser's perspective, how many external surfaces does Agronomy Studio expose?",
+      "explanation": "The frontend talks only to the gateway (`/agronomy-api/*`) and the mock AI search; the domain services sit behind the gateway.",
+      "options": [
+        "One: the gateway only",
+        "Two: the gateway and the mock AI search",
+        "Twelve: one per domain service",
+        "It varies per page"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Limiting the number of surfaces the frontend depends on reduces the number of fakes and fixtures tests must manage.",
+      "explanation": "Each surface a client touches must be stood up or stubbed in tests, so a narrower surface means fewer fixtures and failure modes to reason about.",
+      "answer": true
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Why can the gateway be tested without running the Blazor frontend?",
+      "explanation": "A stable, narrow contract lets each side be tested against the agreed URL shape and schema without the other side being live.",
+      "options": [
+        "Because the frontend has no tests of its own",
+        "Because both sides share a stable contract that each can be verified against independently",
+        "Because Netlify runs the tests for you",
+        "Because the gateway has no logic worth testing"
+      ],
+      "answer": 1
+    }
+  ]
+}

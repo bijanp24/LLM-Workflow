@@ -25,6 +25,12 @@
       "title": "Composing a Dozen APIs: Gateway Aggregation in Agronomy Studio",
       "description": "Using Agronomy Studio's Blazor + TypeScript Netlify backend as a worked example, learn how one gateway fans out to many domain microservices, aggregates their results, and stays trustworthy under partial failure.",
       "manifest": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/course.json"
+    },
+    {
+      "id": "testable-by-design-dev-prod-parity-and-deterministic-mocks-i",
+      "title": "Testable by Design: Dev/Prod Parity and Deterministic Mocks in Agronomy Studio",
+      "description": "Using Agronomy Studio's Blazor + Netlify Functions backend, learn how limiting external surfaces, splitting domain logic from function wrappers, and stubbing the LLM make a gateway-backed system fast to test and faithful between local dev and production.",
+      "manifest": "testable-by-design-dev-prod-parity-and-deterministic-mocks-i/course.json"
     }
   ]
 }

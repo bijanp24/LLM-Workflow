@@ -1,0 +1,32 @@
+{
+  "id": "testable-by-design-dev-prod-parity-and-deterministic-mocks-i",
+  "title": "Testable by Design: Dev/Prod Parity and Deterministic Mocks in Agronomy Studio",
+  "description": "Using Agronomy Studio's Blazor + Netlify Functions backend, learn how limiting external surfaces, splitting domain logic from function wrappers, and stubbing the LLM make a gateway-backed system fast to test and faithful between local dev and production.",
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "id": "two-surfaces-one-test-boundary",
+      "title": "Two Surfaces, One Test Boundary",
+      "doc": "testable-by-design-dev-prod-parity-and-deterministic-mocks-i/docs/01-two-surfaces-one-test-boundary.md",
+      "quiz": "testable-by-design-dev-prod-parity-and-deterministic-mocks-i/quizzes/01-two-surfaces-one-test-boundary.json"
+    },
+    {
+      "id": "domain-modules-vs-function-wrappers",
+      "title": "Domain Modules vs. Function Wrappers",
+      "doc": "testable-by-design-dev-prod-parity-and-deterministic-mocks-i/docs/02-domain-modules-vs-function-wrappers.md",
+      "quiz": "testable-by-design-dev-prod-parity-and-deterministic-mocks-i/quizzes/02-domain-modules-vs-function-wrappers.json"
+    },
+    {
+      "id": "dev-prod-parity-mocks-locally-redirects-in-production",
+      "title": "Dev/Prod Parity: Mocks Locally, Redirects in Production",
+      "doc": "testable-by-design-dev-prod-parity-and-deterministic-mocks-i/docs/03-dev-prod-parity-mocks-locally-redirects-in-production.md",
+      "quiz": "testable-by-design-dev-prod-parity-and-deterministic-mocks-i/quizzes/03-dev-prod-parity-mocks-locally-redirects-in-production.json"
+    },
+    {
+      "id": "deterministic-mocks-at-the-ai-boundary",
+      "title": "Deterministic Mocks at the AI Boundary",
+      "doc": "testable-by-design-dev-prod-parity-and-deterministic-mocks-i/docs/04-deterministic-mocks-at-the-ai-boundary.md",
+      "quiz": "testable-by-design-dev-prod-parity-and-deterministic-mocks-i/quizzes/04-deterministic-mocks-at-the-ai-boundary.json"
+    }
+  ]
+}
