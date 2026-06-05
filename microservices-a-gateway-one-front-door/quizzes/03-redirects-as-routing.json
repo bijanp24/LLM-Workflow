@@ -1,0 +1,40 @@
+{
+  "id": "redirects-as-routing",
+  "title": "Redirects as Routing — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Why is `status = 200` used on the gateway redirect instead of `301` or `302`?",
+      "explanation": "A 200 is a rewrite: the server proxies to the internal function without changing the visible URL, keeping the internal path hidden and the public contract stable.",
+      "options": [
+        "It makes the response faster",
+        "It is a server-side rewrite/proxy that hides the internal path while the browser still sees the public URL",
+        "It tells the browser to cache the page forever",
+        "It is required for any redirect to work at all"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Redirect rules are evaluated top to bottom with first-match-wins. What follows from this?",
+      "explanation": "Because the first match wins, a broad `/agronomy-api/*` placed before `/agronomy-api/health` would intercept the health requests; specific rules go first.",
+      "options": [
+        "Order does not matter as long as all rules exist",
+        "Specific rules must come before broad wildcards or the wildcard will swallow them",
+        "Wildcards should always be listed first",
+        "Each rule must have a unique status code"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "Routing in `netlify.toml` lets you repoint a public path to a renamed or relocated function without changing the frontend.",
+      "explanation": "True. The client only knows the public path; changing the redirect target is a config change invisible to the frontend.",
+      "answer": false
+    }
+  ]
+}

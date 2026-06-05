@@ -1,0 +1,40 @@
+{
+  "id": "why-a-gateway-reducing-coupling-and-fan-out",
+  "title": "Why a Gateway: Reducing Coupling and Fan-Out — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What is the primary coupling problem a gateway addresses?",
+      "explanation": "Direct calls force the client to depend on every service's location and contract; a gateway replaces many dependencies with one stable contract.",
+      "options": [
+        "The frontend must know and depend on the address and contract of every backend service",
+        "The backend services run too slowly",
+        "The frontend is written in the wrong language",
+        "There is no way to log requests"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "A healthy gateway is a good place to put rich domain business rules so they are centralized.",
+      "explanation": "A gateway should stay thin and route/compose. Putting domain logic in it recreates a chokepoint and recentralizes coupling — the 'distributed monolith' anti-pattern.",
+      "answer": false
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "When a single screen needs three datasets, what is the gateway's advantage over the browser calling three services?",
+      "explanation": "Server-side fan-out happens close to the data on internal links, and the browser still issues just one request to the stable public path.",
+      "options": [
+        "It lets the browser cache more aggressively",
+        "It can fan out server-side over fast internal links and return one composed response",
+        "It removes the need for any backend services",
+        "It guarantees the data is always fresh"
+      ],
+      "answer": 1
+    }
+  ]
+}

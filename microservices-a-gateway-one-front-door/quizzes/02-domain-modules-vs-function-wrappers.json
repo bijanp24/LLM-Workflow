@@ -1,0 +1,40 @@
+{
+  "id": "domain-modules-vs-function-wrappers",
+  "title": "Domain Modules vs. Function Wrappers — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What is the correct responsibility of a function wrapper in `netlify/functions/*`?",
+      "explanation": "Wrappers are thin protocol adapters: parse input, invoke the module, format output and errors. Business rules live in the domain module.",
+      "options": [
+        "Hold the core business rules so they deploy together",
+        "Parse the request, call a domain module, and shape the HTTP response",
+        "Store the database connection pool and run migrations",
+        "Render the Blazor UI"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Because domain modules in `netlify/lib/*` know nothing about HTTP, they can be unit-tested with a plain function call and assertion.",
+      "explanation": "True. Decoupling logic from the transport means tests need no HTTP event simulation or deployment — a key benefit of the split.",
+      "answer": false
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "The gateway module needs soil data to compose a response. What is the cleanest way to get it?",
+      "explanation": "Since logic lives in importable modules, the gateway can call `getSoilProfile` directly, avoiding an unnecessary internal HTTP hop and duplication.",
+      "options": [
+        "Make an internal HTTP call to the soil function endpoint",
+        "Import and call the soil domain module directly in code",
+        "Duplicate the soil logic inside the gateway",
+        "Ask the frontend to send the soil data"
+      ],
+      "answer": 1
+    }
+  ]
+}

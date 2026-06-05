@@ -1,0 +1,32 @@
+{
+  "id": "microservices-a-gateway-one-front-door",
+  "title": "Microservices & a Gateway: One Front Door",
+  "description": "Using a real Blazor + Netlify Functions app as a guide, learn how a single API gateway reduces coupling, how to separate domain logic from deployment wrappers, how routing-by-redirect works, and why AI belongs outside the deterministic compute path.",
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "id": "why-a-gateway-reducing-coupling-and-fan-out",
+      "title": "Why a Gateway: Reducing Coupling and Fan-Out",
+      "doc": "microservices-a-gateway-one-front-door/docs/01-why-a-gateway-reducing-coupling-and-fan-out.md",
+      "quiz": "microservices-a-gateway-one-front-door/quizzes/01-why-a-gateway-reducing-coupling-and-fan-out.json"
+    },
+    {
+      "id": "domain-modules-vs-function-wrappers",
+      "title": "Domain Modules vs. Function Wrappers",
+      "doc": "microservices-a-gateway-one-front-door/docs/02-domain-modules-vs-function-wrappers.md",
+      "quiz": "microservices-a-gateway-one-front-door/quizzes/02-domain-modules-vs-function-wrappers.json"
+    },
+    {
+      "id": "redirects-as-routing",
+      "title": "Redirects as Routing",
+      "doc": "microservices-a-gateway-one-front-door/docs/03-redirects-as-routing.md",
+      "quiz": "microservices-a-gateway-one-front-door/quizzes/03-redirects-as-routing.json"
+    },
+    {
+      "id": "keeping-ai-out-of-the-deterministic-compute-path",
+      "title": "Keeping AI Out of the Deterministic Compute Path",
+      "doc": "microservices-a-gateway-one-front-door/docs/04-keeping-ai-out-of-the-deterministic-compute-path.md",
+      "quiz": "microservices-a-gateway-one-front-door/quizzes/04-keeping-ai-out-of-the-deterministic-compute-path.json"
+    }
+  ]
+}
