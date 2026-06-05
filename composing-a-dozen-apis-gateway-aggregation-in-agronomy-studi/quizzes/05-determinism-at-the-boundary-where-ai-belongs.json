@@ -1,0 +1,53 @@
+{
+  "id": "determinism-at-the-boundary-where-ai-belongs",
+  "title": "Determinism at the Boundary: Where AI Belongs — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Why is the AI search implemented as a deterministic mock rather than a live LLM call during development and testing?",
+      "explanation": "Determinism makes the endpoint testable: the same input yields the same output, which a live model cannot guarantee.",
+      "options": [
+        "LLMs are too cheap to be worth using",
+        "A deterministic mock lets tests assert exact, repeatable results",
+        "Mocks are faster to type than real code",
+        "Netlify does not allow network calls"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Putting an LLM call directly inside `fieldSummary` would make identical requests potentially return different results, harming reproducibility.",
+      "explanation": "Model outputs vary across runs, so a recommendation derived from one in the core path would not be reproducible or easily auditable.",
+      "answer": true
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "What is the architectural principle behind keeping AI on a separate surface from the gateway?",
+      "explanation": "Isolating probabilistic AI from the deterministic core keeps the core testable and trustworthy and lets AI be swapped or disabled safely.",
+      "options": [
+        "AI is always more accurate than deterministic code",
+        "Separate the correct-and-reproducible core from the helpful-but-probabilistic enhancement",
+        "All endpoints should use the same technology",
+        "The gateway cannot call any external service"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "Why is an LLM's failure mode considered harder to handle than a service returning a 500?",
+      "explanation": "An explicit error is easy to detect and route around; a plausible-but-wrong answer can slip through unnoticed, which is more dangerous for decision-making.",
+      "options": [
+        "A 500 is impossible to detect",
+        "An LLM can confidently return wrong data that looks valid",
+        "LLMs never fail",
+        "A 500 always crashes the gateway"
+      ],
+      "answer": 1
+    }
+  ]
+}

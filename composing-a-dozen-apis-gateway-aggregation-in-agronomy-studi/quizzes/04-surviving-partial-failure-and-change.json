@@ -1,0 +1,53 @@
+{
+  "id": "surviving-partial-failure-and-change",
+  "title": "Surviving Partial Failure and Change — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Why prefer `Promise.allSettled` over `Promise.all` in a gateway that composes several services?",
+      "explanation": "`allSettled` waits for all calls and reports each result independently, enabling graceful degradation when one upstream fails.",
+      "options": [
+        "It runs the calls sequentially for safety",
+        "It returns every call's outcome so one failure doesn't sink the whole response",
+        "It automatically retries failed calls",
+        "It is the only method that supports timeouts"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "If six independent services each have 99% availability and the gateway requires all six to succeed, the combined success rate is lower than 99%.",
+      "explanation": "Requiring all six multiplies the probabilities: 0.99^6 is about 94%, lower than any single service.",
+      "answer": true
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "What problem does wrapping each upstream call in a timeout solve?",
+      "explanation": "With concurrency, total latency is the slowest call; a timeout converts a stalled call into a handled failure instead of an indefinite wait.",
+      "options": [
+        "It reduces the number of upstream services",
+        "It prevents a single hung service from pinning the entire response open",
+        "It guarantees every call succeeds",
+        "It removes the need for the gateway"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "How does an anti-corruption layer in each `lib/` module help with versioning?",
+      "explanation": "By translating each upstream into an internal vocabulary, schema churn is absorbed in one module instead of rippling through the system.",
+      "options": [
+        "It exposes the raw upstream schema directly to the UI",
+        "It translates upstream schema changes into the gateway's stable vocabulary so downstream code is unaffected",
+        "It deletes old API versions automatically",
+        "It forces the UI to update on every upstream change"
+      ],
+      "answer": 1
+    }
+  ]
+}

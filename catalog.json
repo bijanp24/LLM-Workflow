@@ -19,6 +19,12 @@
       "title": "Microservices & a Gateway: One Front Door",
       "description": "Using a real Blazor + Netlify Functions app as a guide, learn how a single API gateway reduces coupling, how to separate domain logic from deployment wrappers, how routing-by-redirect works, and why AI belongs outside the deterministic compute path.",
       "manifest": "microservices-a-gateway-one-front-door/course.json"
+    },
+    {
+      "id": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi",
+      "title": "Composing a Dozen APIs: Gateway Aggregation in Agronomy Studio",
+      "description": "Using Agronomy Studio's Blazor + TypeScript Netlify backend as a worked example, learn how one gateway fans out to many domain microservices, aggregates their results, and stays trustworthy under partial failure.",
+      "manifest": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/course.json"
     }
   ]
 }

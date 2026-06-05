@@ -1,0 +1,38 @@
+{
+  "id": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi",
+  "title": "Composing a Dozen APIs: Gateway Aggregation in Agronomy Studio",
+  "description": "Using Agronomy Studio's Blazor + TypeScript Netlify backend as a worked example, learn how one gateway fans out to many domain microservices, aggregates their results, and stays trustworthy under partial failure.",
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "id": "fan-out-and-aggregation-the-gateway-as-a-composer",
+      "title": "Fan-out and Aggregation: The Gateway as a Composer",
+      "doc": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/docs/01-fan-out-and-aggregation-the-gateway-as-a-composer.md",
+      "quiz": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/quizzes/01-fan-out-and-aggregation-the-gateway-as-a-composer.json"
+    },
+    {
+      "id": "domain-modules-vs-function-wrappers",
+      "title": "Domain Modules vs. Function Wrappers",
+      "doc": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/docs/02-domain-modules-vs-function-wrappers.md",
+      "quiz": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/quizzes/02-domain-modules-vs-function-wrappers.json"
+    },
+    {
+      "id": "redirects-as-routing-from-url-to-function",
+      "title": "Redirects as Routing: From URL to Function",
+      "doc": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/docs/03-redirects-as-routing-from-url-to-function.md",
+      "quiz": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/quizzes/03-redirects-as-routing-from-url-to-function.json"
+    },
+    {
+      "id": "surviving-partial-failure-and-change",
+      "title": "Surviving Partial Failure and Change",
+      "doc": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/docs/04-surviving-partial-failure-and-change.md",
+      "quiz": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/quizzes/04-surviving-partial-failure-and-change.json"
+    },
+    {
+      "id": "determinism-at-the-boundary-where-ai-belongs",
+      "title": "Determinism at the Boundary: Where AI Belongs",
+      "doc": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/docs/05-determinism-at-the-boundary-where-ai-belongs.md",
+      "quiz": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/quizzes/05-determinism-at-the-boundary-where-ai-belongs.json"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "id": "redirects-as-routing-from-url-to-function",
+  "title": "Redirects as Routing: From URL to Function — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Why does the redirect use `status = 200` instead of `301` or `302`?",
+      "explanation": "Status 200 makes it a transparent rewrite: the edge proxies to the function while the client still sees /agronomy-api/, hiding the implementation path.",
+      "options": [
+        "To force the browser to cache the response",
+        "To rewrite the request server-side so the client keeps the original URL",
+        "Because 200 is required for all Netlify functions",
+        "To make the request faster by skipping the function"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "In the rule `to = \"/.netlify/functions/agronomy-api/:splat\"`, what does `:splat` represent?",
+      "explanation": "`:splat` carries forward the portion matched by the `*` wildcard, so subpaths are preserved through the rewrite.",
+      "options": [
+        "A fixed function name",
+        "Whatever the `*` wildcard in the `from` pattern matched",
+        "The query string only",
+        "The HTTP status code"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "Because the rewrite keeps the API on the same origin as the app, typical cross-origin CORS handling is largely unnecessary.",
+      "explanation": "The browser sees /agronomy-api on the same origin, so the gateway call is not cross-origin and CORS friction is avoided.",
+      "answer": true
+    }
+  ]
+}
