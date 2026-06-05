@@ -13,6 +13,12 @@
       "title": "Applied Probability for LLM Verification",
       "description": "Statistics for not getting bamboozled by the robot. Build the probabilistic intuition you need to know when to trust an LLM, when to verify, and how hard.",
       "manifest": "applied-probability/course.json"
+    },
+    {
+      "id": "microservices-a-gateway-one-front-door",
+      "title": "Microservices & a Gateway: One Front Door",
+      "description": "Using a real Blazor + Netlify Functions app as a guide, learn how a single API gateway reduces coupling, how to separate domain logic from deployment wrappers, how routing-by-redirect works, and why AI belongs outside the deterministic compute path.",
+      "manifest": "microservices-a-gateway-one-front-door/course.json"
     }
   ]
 }

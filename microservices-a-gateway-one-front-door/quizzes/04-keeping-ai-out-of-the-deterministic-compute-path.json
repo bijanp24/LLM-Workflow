@@ -1,0 +1,40 @@
+{
+  "id": "keeping-ai-out-of-the-deterministic-compute-path",
+  "title": "Keeping AI Out of the Deterministic Compute Path — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Why is the AI search implemented as a deterministic mock rather than a live LLM call during development?",
+      "explanation": "A deterministic mock yields the same output for the same input, enabling exact assertions and removing flaky external dependencies from tests.",
+      "options": [
+        "LLMs are always too expensive to use",
+        "It makes tests reproducible and keeps CI free of network, key, and drift dependencies",
+        "Mocks run on the GPU",
+        "It is the only way Netlify supports AI"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "What is the core principle for placing AI in this architecture?",
+      "explanation": "The app lets AI help users find the right deterministic tool but never makes it the source of reported facts, preserving reproducibility and trust.",
+      "options": [
+        "AI should compute the authoritative factual numbers for speed",
+        "Probabilistic components can guide and rank, but authoritative computation stays deterministic and verifiable",
+        "All endpoints should route through the AI for consistency",
+        "AI and deterministic compute should share the same handler"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "Because the mock and a future real LLM share the same `aiSearch` signature and live behind the same separate endpoint, swapping in a real model is a localized change.",
+      "explanation": "True. The mock establishes the contract; honoring the same signature and endpoint keeps the change confined behind the seam, away from the deterministic compute path.",
+      "answer": false
+    }
+  ]
+}
