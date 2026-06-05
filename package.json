@@ -1,0 +1,13 @@
+{
+  "name": "llm-workflow-content",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tooling for the LLM Academy content repo. The courses themselves are plain markdown/JSON; this package only holds the automated course generator.",
+  "scripts": {
+    "generate-course": "node tools/generate-course.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.100.0"
+  }
+}

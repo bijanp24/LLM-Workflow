@@ -5,3 +5,8 @@ desktop.ini
 *.swp
 .idea/
 .vscode/
+
+# Tooling (course generator)
+node_modules/
+.env
+package-lock.json
