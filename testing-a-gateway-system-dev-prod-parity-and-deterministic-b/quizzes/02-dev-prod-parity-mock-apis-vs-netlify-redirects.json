@@ -1,0 +1,40 @@
+{
+  "id": "dev-prod-parity-mock-apis-vs-netlify-redirects",
+  "title": "Dev/Prod Parity: Mock APIs vs. Netlify Redirects — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "In `netlify.toml`, what does a redirect with `status = 200` do?",
+      "explanation": "A status 200 redirect is a rewrite: the public URL is preserved while Netlify internally routes to the function, passing the remaining path via `:splat`.",
+      "options": [
+        "Issues a 301 permanent redirect that changes the browser URL",
+        "Rewrites the request internally so the browser URL stays the same while a function serves it",
+        "Blocks the request and returns an empty 200 response",
+        "Caches the response for 200 seconds"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Why should the local mock route on the same path semantics that production uses (parsing the splat)?",
+      "explanation": "If the mock decides routing differently than production, your local tests exercise a different code path and parity breaks down.",
+      "options": [
+        "To make the mock run faster",
+        "So the mock faithfully reflects how production selects a domain module, avoiding green-local/broken-prod surprises",
+        "Because Netlify requires it",
+        "To reduce the number of domain modules"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "A faithful local mock should only ever return clean, successful responses so tests stay simple.",
+      "explanation": "Production sees timeouts, partial failures, and malformed responses. A mock that can reproduce those failure modes lets you test the frontend's error handling before users hit it.",
+      "answer": false
+    }
+  ]
+}

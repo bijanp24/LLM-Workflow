@@ -1,0 +1,40 @@
+{
+  "id": "two-surfaces-not-twelve-designing-for-testability",
+  "title": "Two Surfaces, Not Twelve: Designing for Testability — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Why does limiting the frontend to two surfaces (gateway + AI search) improve testability?",
+      "explanation": "With one gateway surface instead of twelve direct dependencies, a frontend test stubs a single contract, dramatically reducing brittleness and blast radius.",
+      "options": [
+        "It makes the frontend faster at runtime",
+        "A frontend test must fake fewer HTTP surfaces, so it has fewer reasons to break",
+        "It removes the need for any backend tests",
+        "It guarantees the domain services never change"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "In Agronomy Studio, the frontend calls each of the twelve domain microservices directly.",
+      "explanation": "The frontend talks to only two surfaces: the gateway (`/agronomy-api/*`) and the mock AI search. The gateway fans out to the domain services.",
+      "answer": false
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Where do well-targeted tests in this architecture tend to live?",
+      "explanation": "Each boundary has observable inputs and outputs, so each layer can be asserted independently without standing up the rest of the system.",
+      "options": [
+        "Only inside the Blazor UI components",
+        "At the system's defined boundaries: frontend↔gateway, gateway↔domain modules, domain↔upstreams",
+        "Exclusively against the production deployment",
+        "In a single end-to-end suite that exercises all twelve services at once"
+      ],
+      "answer": 1
+    }
+  ]
+}

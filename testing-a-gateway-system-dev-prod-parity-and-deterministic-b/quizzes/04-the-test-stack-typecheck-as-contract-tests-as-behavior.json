@@ -1,0 +1,53 @@
+{
+  "id": "the-test-stack-typecheck-as-contract-tests-as-behavior",
+  "title": "The Test Stack: Typecheck as Contract, Tests as Behavior — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What does `npm run typecheck` verify that `npm test` does not?",
+      "explanation": "The type checker enforces structural contracts at compile time, flagging every consumer when a signature changes — a form of contract checking distinct from behavioral tests.",
+      "options": [
+        "That the runtime behavior produces correct numeric results",
+        "That argument and return shapes line up across the gateway and domain modules, surfacing contract drift everywhere a module is used",
+        "That the production redirects are configured correctly",
+        "That the AI mock returns deterministic responses"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Why does keeping logic in `netlify/lib/*` and thin wrappers in `netlify/functions/*` make the suite faster?",
+      "explanation": "With logic in importable modules, tests invoke functions directly and avoid network/runtime overhead, leaving only a few integration tests for the wrappers.",
+      "options": [
+        "Because TypeScript compiles faster with more files",
+        "Because most logic can be unit-tested by calling library functions directly, without the Netlify runtime, HTTP, or redirects",
+        "Because thin wrappers cannot contain bugs",
+        "Because Netlify functions cannot be tested at all"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "Passing `npm run typecheck` is sufficient on its own to prove the gateway's logic is correct.",
+      "explanation": "Types prove shapes align but not that the logic computes the right values or routes correctly; behavioral tests in `npm test` are still required.",
+      "answer": false
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "What is a sensible reason to run `npm run typecheck && npm test` in that order in CI?",
+      "explanation": "Running the fast, codebase-wide consistency check first gives quick feedback on shape mismatches before investing time in behavioral tests.",
+      "options": [
+        "Tests must always run before typechecking",
+        "The cheap, broad typecheck fails fast on contract drift before the slower behavioral tests run",
+        "Typecheck depends on the production deployment",
+        "It is the only order Netlify supports"
+      ],
+      "answer": 1
+    }
+  ]
+}

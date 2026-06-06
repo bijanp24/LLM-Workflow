@@ -1,0 +1,32 @@
+{
+  "id": "testing-a-gateway-system-dev-prod-parity-and-deterministic-b",
+  "title": "Testing a Gateway System: Dev/Prod Parity and Deterministic Boundaries",
+  "description": "Using Agronomy Studio's Blazor + Netlify Functions backend, learn how a small microservices-behind-a-gateway system stays testable: limiting the surfaces the frontend touches, keeping local mocks faithful to production redirects, and pushing nondeterminism (like AI) out to the edges.",
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "id": "two-surfaces-not-twelve-designing-for-testability",
+      "title": "Two Surfaces, Not Twelve: Designing for Testability",
+      "doc": "testing-a-gateway-system-dev-prod-parity-and-deterministic-b/docs/01-two-surfaces-not-twelve-designing-for-testability.md",
+      "quiz": "testing-a-gateway-system-dev-prod-parity-and-deterministic-b/quizzes/01-two-surfaces-not-twelve-designing-for-testability.json"
+    },
+    {
+      "id": "dev-prod-parity-mock-apis-vs-netlify-redirects",
+      "title": "Dev/Prod Parity: Mock APIs vs. Netlify Redirects",
+      "doc": "testing-a-gateway-system-dev-prod-parity-and-deterministic-b/docs/02-dev-prod-parity-mock-apis-vs-netlify-redirects.md",
+      "quiz": "testing-a-gateway-system-dev-prod-parity-and-deterministic-b/quizzes/02-dev-prod-parity-mock-apis-vs-netlify-redirects.json"
+    },
+    {
+      "id": "determinism-at-the-edge-why-the-ai-search-is-a-mock",
+      "title": "Determinism at the Edge: Why the AI Search Is a Mock",
+      "doc": "testing-a-gateway-system-dev-prod-parity-and-deterministic-b/docs/03-determinism-at-the-edge-why-the-ai-search-is-a-mock.md",
+      "quiz": "testing-a-gateway-system-dev-prod-parity-and-deterministic-b/quizzes/03-determinism-at-the-edge-why-the-ai-search-is-a-mock.json"
+    },
+    {
+      "id": "the-test-stack-typecheck-as-contract-tests-as-behavior",
+      "title": "The Test Stack: Typecheck as Contract, Tests as Behavior",
+      "doc": "testing-a-gateway-system-dev-prod-parity-and-deterministic-b/docs/04-the-test-stack-typecheck-as-contract-tests-as-behavior.md",
+      "quiz": "testing-a-gateway-system-dev-prod-parity-and-deterministic-b/quizzes/04-the-test-stack-typecheck-as-contract-tests-as-behavior.json"
+    }
+  ]
+}
