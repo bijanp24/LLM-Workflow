@@ -1,0 +1,40 @@
+{
+  "id": "determinism-at-the-edge-why-the-ai-search-is-a-mock",
+  "title": "Determinism at the Edge: Why the AI Search Is a Mock — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Why is the AI search implemented as a deterministic mock rather than a live LLM call?",
+      "explanation": "Keeping AI as a deterministic mock at the edge preserves reproducibility in the domain modules, enabling exact assertions and offline development.",
+      "options": [
+        "Because LLMs cannot be called from TypeScript",
+        "So the core compute path stays reproducible and exactly testable, with nondeterminism confined to the edge",
+        "To permanently avoid ever using AI in the product",
+        "Because deterministic mocks are always more accurate than real models"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "What is the danger of placing an LLM in the middle of the gateway's fan-out path?",
+      "explanation": "Nondeterministic output in the core path means you can no longer assert exact values, weakening the entire test suite.",
+      "options": [
+        "It would make redirects fail",
+        "Downstream results become nondeterministic, so tests degrade to fuzzy checks that catch fewer bugs",
+        "It would double the number of domain modules",
+        "It would change the frontend's URL"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "If a real LLM is added later, its output should be allowed to feed directly back into deterministic numeric calculations without validation.",
+      "explanation": "Model output should be treated as suggestion/presentation at the edge. If it must flow downstream, it should be snapshotted and validated at the boundary so the core stays deterministic.",
+      "answer": false
+    }
+  ]
+}
