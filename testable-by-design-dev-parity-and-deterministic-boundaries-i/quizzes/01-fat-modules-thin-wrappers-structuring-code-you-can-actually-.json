@@ -1,0 +1,40 @@
+{
+  "id": "fat-modules-thin-wrappers-structuring-code-you-can-actually-",
+  "title": "Fat Modules, Thin Wrappers: Structuring Code You Can Actually Test — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "In Agronomy Studio's structure, where does the soil-classification business logic live?",
+      "explanation": "Domain logic lives in `netlify/lib/*` modules so it can be tested without HTTP plumbing; the functions are thin wrappers.",
+      "options": [
+        "In `netlify/functions/soil.mjs`, the HTTP wrapper",
+        "In `netlify/lib/soil.ts`, a plain domain module",
+        "Inside the Blazor frontend",
+        "In `netlify.toml`"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Passing a `source` argument into `classifySoil` lets a test substitute a fake data source instead of hitting the network.",
+      "explanation": "That is dependency injection: the wrapper supplies the live source while tests supply a fake, avoiding network calls and mocking globals.",
+      "answer": true
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "Why are the function wrappers kept deliberately 'dull'?",
+      "explanation": "Thin wrappers push the interesting, testable logic into modules; the wrappers just parse and serialize, so few tests target them.",
+      "options": [
+        "So they run faster than the modules",
+        "Because Netlify forbids logic in functions",
+        "So that little worth testing lives in transport code, concentrating tests on the domain modules",
+        "To reduce the bundle size of the frontend"
+      ],
+      "answer": 2
+    }
+  ]
+}

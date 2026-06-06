@@ -1,0 +1,40 @@
+{
+  "id": "dev-prod-parity-one-frontend-two-backends-that-behave-the-sa",
+  "title": "Dev/Prod Parity: One Frontend, Two Backends That Behave the Same — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What makes local development behave like production in Agronomy Studio?",
+      "explanation": "Both the local mock and the production function wrap the same domain modules, so observable behavior matches and drift is avoided.",
+      "options": [
+        "The mock server reimplements each endpoint's behavior by hand",
+        "The local mock and the production function both call the same `netlify/lib` modules",
+        "Production and local both run on Netlify's cloud",
+        "The frontend detects the environment and switches logic"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Environment parity is fundamentally about identical source files in both environments.",
+      "explanation": "False — parity is about identical observable behavior (the same contract). The transport shell differs; the shared module guarantees the behavior matches.",
+      "answer": true
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "What is the maintenance discipline required for the dev/prod routing to stay in sync?",
+      "explanation": "Routing must be updated in both places; keeping the table small (one gateway entry) makes this dual-view discipline sustainable.",
+      "options": [
+        "Never add new endpoints",
+        "Treat the `netlify.toml` redirects and the mock's path matching as two views of one routing table",
+        "Run all tests only in production",
+        "Hard-code service URLs into the frontend"
+      ],
+      "answer": 1
+    }
+  ]
+}
