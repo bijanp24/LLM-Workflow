@@ -1,0 +1,40 @@
+{
+  "id": "determinism-at-the-boundary-keeping-ai-out-of-the-compute-pa",
+  "title": "Determinism at the Boundary: Keeping AI Out of the Compute Path — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Why is Agronomy Studio's AI search implemented as a deterministic mock in this build?",
+      "explanation": "Determinism makes tests meaningful and lets every reported value be re-derived from the same inputs — the system stays trustworthy.",
+      "options": [
+        "Because deterministic behavior keeps the pipeline testable and the reported results reproducible",
+        "Because LLMs are too expensive to call even once",
+        "Because Netlify does not allow network calls",
+        "Because the frontend cannot parse model output"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "In the recommended design, what role does AI play relative to the deterministic core?",
+      "explanation": "AI lives outside the compute path — converting user text to a structured query or summarizing output — while correctness-critical work stays deterministic.",
+      "options": [
+        "It performs the core classification and aggregation",
+        "It sits at the edge in an advisory role, e.g. turning text into a structured query",
+        "It replaces the gateway entirely",
+        "It validates that the deterministic results are correct"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "Because the AI boundary is an explicit contract (a structured query), the stub can later be replaced by a real LLM without changing the trusted deterministic core.",
+      "explanation": "The structured query is the contract between the AI edge and the core, so swapping the stub for a real model leaves the deterministic logic untouched.",
+      "answer": true
+    }
+  ]
+}

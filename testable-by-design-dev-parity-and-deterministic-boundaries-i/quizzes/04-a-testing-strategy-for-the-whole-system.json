@@ -1,0 +1,53 @@
+{
+  "id": "a-testing-strategy-for-the-whole-system",
+  "title": "A Testing Strategy for the Whole System — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What distinct question does `npm run typecheck` answer that `npm test` does not?",
+      "explanation": "Type checking statically verifies that types/shapes line up across modules, wrappers, and the frontend; tests verify runtime behavior. Both are needed.",
+      "options": [
+        "Whether the deployed site is reachable",
+        "Whether the code agrees with itself about data shapes, without running anything",
+        "Whether the AI mock is deterministic",
+        "Whether the frontend renders correctly"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "Which layer should have the most tests in this architecture?",
+      "explanation": "Most tests should target the fast, deterministic domain modules where the business rules live; e2e tests are expensive and kept few.",
+      "options": [
+        "End-to-end smoke tests that boot the mock server",
+        "Fast domain module tests with injected fakes",
+        "Routing parity checks",
+        "Production monitoring alerts"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "If you cannot inject a failing data source to test the gateway's partial-failure behavior, it likely indicates the code is too coupled to test well.",
+      "explanation": "The ability to inject a failing fake depends on the dependency-injection seam from Lesson 1; difficulty injecting it signals tight coupling.",
+      "answer": true
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "Why include a small routing/parity test that the public path reaches the right module?",
+      "explanation": "Routing is the place dev and prod can silently diverge; a small parity check guards the shared routing table described in Lesson 2.",
+      "options": [
+        "To replace the need for type checking",
+        "To catch dev/prod drift between the mock routes and the `netlify.toml` redirects",
+        "To make the test suite slower on purpose",
+        "Because Netlify requires it"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "testable-by-design-dev-parity-and-deterministic-boundaries-i",
+  "title": "Testable by Design: Dev Parity and Deterministic Boundaries in Agronomy Studio",
+  "description": "Using Agronomy Studio's TypeScript Netlify backend, learn to structure a microservices system so it runs and tests the same offline as in production — by separating logic from wrappers, mirroring routing in local mocks, and keeping nondeterministic AI out of the compute path.",
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "id": "fat-modules-thin-wrappers-structuring-code-you-can-actually-",
+      "title": "Fat Modules, Thin Wrappers: Structuring Code You Can Actually Test",
+      "doc": "testable-by-design-dev-parity-and-deterministic-boundaries-i/docs/01-fat-modules-thin-wrappers-structuring-code-you-can-actually-.md",
+      "quiz": "testable-by-design-dev-parity-and-deterministic-boundaries-i/quizzes/01-fat-modules-thin-wrappers-structuring-code-you-can-actually-.json"
+    },
+    {
+      "id": "dev-prod-parity-one-frontend-two-backends-that-behave-the-sa",
+      "title": "Dev/Prod Parity: One Frontend, Two Backends That Behave the Same",
+      "doc": "testable-by-design-dev-parity-and-deterministic-boundaries-i/docs/02-dev-prod-parity-one-frontend-two-backends-that-behave-the-sa.md",
+      "quiz": "testable-by-design-dev-parity-and-deterministic-boundaries-i/quizzes/02-dev-prod-parity-one-frontend-two-backends-that-behave-the-sa.json"
+    },
+    {
+      "id": "determinism-at-the-boundary-keeping-ai-out-of-the-compute-pa",
+      "title": "Determinism at the Boundary: Keeping AI Out of the Compute Path",
+      "doc": "testable-by-design-dev-parity-and-deterministic-boundaries-i/docs/03-determinism-at-the-boundary-keeping-ai-out-of-the-compute-pa.md",
+      "quiz": "testable-by-design-dev-parity-and-deterministic-boundaries-i/quizzes/03-determinism-at-the-boundary-keeping-ai-out-of-the-compute-pa.json"
+    },
+    {
+      "id": "a-testing-strategy-for-the-whole-system",
+      "title": "A Testing Strategy for the Whole System",
+      "doc": "testable-by-design-dev-parity-and-deterministic-boundaries-i/docs/04-a-testing-strategy-for-the-whole-system.md",
+      "quiz": "testable-by-design-dev-parity-and-deterministic-boundaries-i/quizzes/04-a-testing-strategy-for-the-whole-system.json"
+    }
+  ]
+}
