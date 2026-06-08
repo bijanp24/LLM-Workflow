@@ -1,0 +1,53 @@
+{
+  "id": "routing-that-is-identical-in-dev-and-prod",
+  "title": "Routing That Is Identical in Dev and Prod — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "What does a Netlify redirect with status = 200 do?",
+      "explanation": "A 200 redirect is a rewrite/proxy: the browser still sees /agronomy-api/soil, but Netlify forwards the request internally to the target function.",
+      "options": [
+        "Sends the browser a 301 to a new URL",
+        "Proxies (rewrites) the request internally while the browser keeps the original path",
+        "Blocks the request until authentication",
+        "Caches the response for 200 seconds"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "multiple-choice",
+      "prompt": "What is the role of :splat in the redirect rule?",
+      "explanation": ":splat captures the wildcard portion of the path (e.g. soil?lat=36.7) and forwards it to the gateway function, preserving the route tail and query.",
+      "options": [
+        "It strips all query parameters",
+        "It captures whatever the * matched and passes it through to the function",
+        "It sets the HTTP status code",
+        "It selects the AI search endpoint"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q3",
+      "type": "true-false",
+      "prompt": "Pointing the frontend at a localhost URL in dev and the real domain in prod via an environment variable fully preserves dev/prod parity.",
+      "explanation": "It breaks parity: dev and prod take different code paths and CORS behavior, so routing bugs can hide until deploy. Using a single relative path and varying only what answers it preserves parity.",
+      "answer": false
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "How does the gateway decide which domain module handles a request?",
+      "explanation": "The gateway dispatches on the path tail (e.g. 'soil') via a route table mapping names to domain functions, and both the prod rewrite and the local mock honor the same scheme.",
+      "options": [
+        "By the HTTP method only",
+        "By the path tail after /agronomy-api/, looked up in a route table",
+        "By the order functions are deployed",
+        "By asking the AI search"
+      ],
+      "answer": 1
+    }
+  ]
+}

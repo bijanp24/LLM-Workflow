@@ -25,6 +25,12 @@
       "title": "Composing a Dozen APIs: Gateway Aggregation in Agronomy Studio",
       "description": "Using Agronomy Studio's Blazor + TypeScript Netlify backend as a worked example, learn how one gateway fans out to many domain microservices, aggregates their results, and stays trustworthy under partial failure.",
       "manifest": "composing-a-dozen-apis-gateway-aggregation-in-agronomy-studi/course.json"
+    },
+    {
+      "id": "honest-backends-dev-prod-parity-and-testability-in-agronomy-",
+      "title": "Honest Backends: Dev/Prod Parity and Testability in Agronomy Studio",
+      "description": "Using Agronomy Studio's Blazor + TypeScript Netlify backend, learn how to keep a microservices system testable and trustworthy by separating domain logic from function wrappers, mirroring routing across local and production environments, and keeping non-deterministic AI off the core compute path.",
+      "manifest": "honest-backends-dev-prod-parity-and-testability-in-agronomy-/course.json"
     }
   ]
 }

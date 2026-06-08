@@ -1,0 +1,53 @@
+{
+  "id": "thin-wrappers-fat-libraries",
+  "title": "Thin Wrappers, Fat Libraries — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "In Agronomy Studio, where does the substantive domain logic live?",
+      "explanation": "The lib modules (cimis, soil, crop, gateway, etc.) hold the real logic. The functions directory holds thin wrappers that just translate HTTP to function calls.",
+      "options": [
+        "In netlify/functions/* wrappers",
+        "In netlify/lib/* modules",
+        "In the netlify.toml file",
+        "In the Blazor frontend"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Because domain logic lives in plain functions in netlify/lib, the test suite can exercise it without starting an HTTP server.",
+      "explanation": "True. The lib modules export ordinary functions, so tests import and call them directly — fast and focused on behavior rather than HTTP plumbing.",
+      "answer": false
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "What is a good signal that logic has ended up in the wrong place?",
+      "explanation": "Wrappers should contain nothing worth testing. Wanting to test a wrapper directly signals that logic belongs in a lib module instead.",
+      "options": [
+        "A lib module imports another lib module",
+        "You want to write a unit test directly against a function wrapper",
+        "A wrapper returns a Response.json object",
+        "The gateway calls a domain module in-process"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "Why can the gateway module call domain modules without making HTTP requests to itself?",
+      "explanation": "Logic in lib modules is callable in-process. Logic trapped inside an HTTP handler would only be reachable over the network, forcing the gateway to call itself.",
+      "options": [
+        "Because Netlify caches all responses",
+        "Because the domain logic lives in importable library functions, not only inside HTTP handlers",
+        "Because the frontend forwards the data",
+        "Because the AI search proxies the calls"
+      ],
+      "answer": 1
+    }
+  ]
+}
