@@ -1,0 +1,40 @@
+{
+  "id": "two-surfaces-two-environments",
+  "title": "Two Surfaces, Two Environments — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "How many backend surfaces does the Agronomy Studio frontend call directly?",
+      "explanation": "The frontend talks to exactly two surfaces — the gateway at /agronomy-api/* and the mock AI search — regardless of how many domain services sit behind the gateway.",
+      "options": [
+        "Twelve, one per domain service",
+        "Two: the gateway and the mock AI search",
+        "One: only the gateway",
+        "Zero; it reads from a static cache"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "Environment parity means the frontend uses different request paths and payload shapes in local development than it does in production.",
+      "explanation": "Parity means the opposite: the paths and response shapes are identical across environments. Only the mechanism answering the request (local mock server vs. Netlify functions) changes.",
+      "answer": false
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "What is the main risk of having the frontend call all twelve domain services directly?",
+      "explanation": "Direct calls leak base URLs, versions, and auth into the frontend, so backend changes force frontend redeploys. A single gateway lets the UI depend on a stable contract instead.",
+      "options": [
+        "Faster responses but worse logging",
+        "Infrastructure details like URLs and auth leak into the UI, coupling it to backend changes",
+        "It makes the AI search deterministic",
+        "It removes the need for any gateway tests"
+      ],
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "id": "keeping-ai-off-the-deterministic-path",
+  "title": "Keeping AI Off the Deterministic Path — Check",
+  "passingScore": 0.7,
+  "questions": [
+    {
+      "id": "q1",
+      "type": "multiple-choice",
+      "prompt": "Why is Agronomy Studio's AI search implemented as a deterministic mock?",
+      "explanation": "A deterministic mock returns the same output for the same input, so the test suite can make stable assertions and the trustworthy core results never depend on a probabilistic component.",
+      "options": [
+        "Because real LLMs are too cheap to bother with",
+        "So tests can assert exact outputs and the core results stay reproducible",
+        "To make the gateway slower on purpose",
+        "Because the frontend cannot parse model output"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q2",
+      "type": "true-false",
+      "prompt": "In Agronomy Studio, the agronomic figures a user acts on are produced by the deterministic compute path, not by the AI component.",
+      "explanation": "True. The gateway and domain modules compute reproducible, traceable values; AI search sits beside that path as an advisory convenience, not inside it.",
+      "answer": false
+    },
+    {
+      "id": "q3",
+      "type": "multiple-choice",
+      "prompt": "What is the benefit of treating the AI search as a separate lib module behind its own surface?",
+      "explanation": "With AI isolated behind its own contract, replacing the stub with a real model is a contained change; the deterministic gateway path and its tests are unaffected.",
+      "options": [
+        "It forces the gateway to call the model on every request",
+        "Swapping the stub for a real model later is a localized change that leaves the deterministic path and its tests untouched",
+        "It removes the need for type checking",
+        "It lets the frontend bypass the gateway"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "q4",
+      "type": "multiple-choice",
+      "prompt": "What general principle does the AI design illustrate?",
+      "explanation": "The pattern is a deterministic, tested core with non-deterministic, advisory components at the edges, so failures cost a convenience rather than a correct answer.",
+      "options": [
+        "Put all logic into the frontend",
+        "Push non-determinism to the edges and keep the core reproducible",
+        "Avoid testing anything that calls a network",
+        "Always prefer probabilistic answers over computed ones"
+      ],
+      "answer": 1
+    }
+  ]
+}

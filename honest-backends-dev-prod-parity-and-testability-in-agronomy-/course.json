@@ -1,0 +1,32 @@
+{
+  "id": "honest-backends-dev-prod-parity-and-testability-in-agronomy-",
+  "title": "Honest Backends: Dev/Prod Parity and Testability in Agronomy Studio",
+  "description": "Using Agronomy Studio's Blazor + TypeScript Netlify backend, learn how to keep a microservices system testable and trustworthy by separating domain logic from function wrappers, mirroring routing across local and production environments, and keeping non-deterministic AI off the core compute path.",
+  "version": "1.0.0",
+  "lessons": [
+    {
+      "id": "two-surfaces-two-environments",
+      "title": "Two Surfaces, Two Environments",
+      "doc": "honest-backends-dev-prod-parity-and-testability-in-agronomy-/docs/01-two-surfaces-two-environments.md",
+      "quiz": "honest-backends-dev-prod-parity-and-testability-in-agronomy-/quizzes/01-two-surfaces-two-environments.json"
+    },
+    {
+      "id": "thin-wrappers-fat-libraries",
+      "title": "Thin Wrappers, Fat Libraries",
+      "doc": "honest-backends-dev-prod-parity-and-testability-in-agronomy-/docs/02-thin-wrappers-fat-libraries.md",
+      "quiz": "honest-backends-dev-prod-parity-and-testability-in-agronomy-/quizzes/02-thin-wrappers-fat-libraries.json"
+    },
+    {
+      "id": "routing-that-is-identical-in-dev-and-prod",
+      "title": "Routing That Is Identical in Dev and Prod",
+      "doc": "honest-backends-dev-prod-parity-and-testability-in-agronomy-/docs/03-routing-that-is-identical-in-dev-and-prod.md",
+      "quiz": "honest-backends-dev-prod-parity-and-testability-in-agronomy-/quizzes/03-routing-that-is-identical-in-dev-and-prod.json"
+    },
+    {
+      "id": "keeping-ai-off-the-deterministic-path",
+      "title": "Keeping AI Off the Deterministic Path",
+      "doc": "honest-backends-dev-prod-parity-and-testability-in-agronomy-/docs/04-keeping-ai-off-the-deterministic-path.md",
+      "quiz": "honest-backends-dev-prod-parity-and-testability-in-agronomy-/quizzes/04-keeping-ai-off-the-deterministic-path.json"
+    }
+  ]
+}
